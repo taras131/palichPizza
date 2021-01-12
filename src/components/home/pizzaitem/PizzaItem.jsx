@@ -1,4 +1,14 @@
+import classNames from "classnames"
+
 const PizzaItem = (props) => {
+    const typesName = ["тонкое","традиционное" ]
+    const sizeName = [26,30,40 ]
+    const onSelectType = (id, index) => {
+        props.setActiveType(id, index)
+    }
+    const onSelectSize = (id, index) => {
+        props.setActiveSize(id, index)
+    }
     return(
         <div className="pizza-block">
             <img
@@ -9,13 +19,18 @@ const PizzaItem = (props) => {
             <h4 className="pizza-block__title">{props.name}</h4>
             <div className="pizza-block__selector">
                 <ul>
-                    <li className="active">тонкое</li>
-                    <li className={props.types[1] ? "" : "disable"}>традиционное</li>
+                    {typesName.map((item, index) => <li
+                        className = {classNames({
+                            active: props.activeType === index,
+                            disable: !props.types.includes(index)
+                        })} key={item}  onClick={()=> onSelectType(props.id, index)}>{item}</li>)}
                 </ul>
                 <ul>
-                    <li className="active">26 см.</li>
-                    <li>30 см.</li>
-                    <li>40 см.</li>
+                    {sizeName.map(item=> <li
+                        className = {classNames({
+                            active: props.activeSize === item,
+                            disable: !props.sizes.includes(item)
+                        })} key={item} onClick={()=> onSelectSize(props.id, item)}>{item}</li>)}
                 </ul>
             </div>
             <div className="pizza-block__bottom">

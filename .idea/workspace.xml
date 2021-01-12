@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bb9e818-8f8e-4c33-81cc-5a7e6b03fe2b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/pizzaReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/pizzaReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/pizzaReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +75,8 @@
       <workItem from="1610184818712" duration="8804000" />
       <workItem from="1610207899995" duration="1497000" />
       <workItem from="1610266094679" duration="13859000" />
-      <workItem from="1610371029248" duration="12936000" />
+      <workItem from="1610371029248" duration="13450000" />
+      <workItem from="1610459433017" duration="11670000" />
     </task>
     <servers />
   </component>
