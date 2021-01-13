@@ -1,40 +1,41 @@
 import classNames from "classnames"
+import PropTypes, {number} from 'prop-types'
 
-const PizzaItem = (props) => {
+const PizzaItem = ({name,id,imageUrl,activeType,activeSize,sizes,price, types,setActiveType,setActiveSize}) => {
     const typesName = ["тонкое","традиционное" ]
     const sizeName = [26,30,40 ]
     const onSelectType = (id, index) => {
-        props.setActiveType(id, index)
+        setActiveType(id, index)
     }
     const onSelectSize = (id, index) => {
-        props.setActiveSize(id, index)
+        setActiveSize(id, index)
     }
     return(
         <div className="pizza-block">
             <img
                 className="pizza-block__image"
-                src={props.imageUrl}
+                src={imageUrl}
                 alt="Pizza"
             />
-            <h4 className="pizza-block__title">{props.name}</h4>
+            <h4 className="pizza-block__title">{name}</h4>
             <div className="pizza-block__selector">
                 <ul>
                     {typesName.map((item, index) => <li
                         className = {classNames({
-                            active: props.activeType === index,
-                            disable: !props.types.includes(index)
-                        })} key={item}  onClick={()=> onSelectType(props.id, index)}>{item}</li>)}
+                            active: activeType === index,
+                            disable: !types.includes(index)
+                        })} key={item}  onClick={()=> onSelectType(id, index)}>{item}</li>)}
                 </ul>
                 <ul>
                     {sizeName.map(item=> <li
                         className = {classNames({
-                            active: props.activeSize === item,
-                            disable: !props.sizes.includes(item)
-                        })} key={item} onClick={()=> onSelectSize(props.id, item)}>{item}</li>)}
+                            active: activeSize === item,
+                            disable: !sizes.includes(item)
+                        })} key={item} onClick={()=> onSelectSize(id, item)}>{item} см.</li>)}
                 </ul>
             </div>
             <div className="pizza-block__bottom">
-                <div className="pizza-block__price">{props.price}</div>
+                <div className="pizza-block__price">{price}</div>
                 <div className="button button--outline button--add">
                     <svg
                         width="12"
@@ -54,6 +55,16 @@ const PizzaItem = (props) => {
             </div>
         </div>
     )
+}
+PizzaItem.propsTypes = {
+    name: number.isRequired,
+    id: number.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    activeType: number.isRequired,
+    activeSize: PropTypes.number.isRequired,
+    sizes: PropTypes.PropTypes.array.isRequired,
+    price: number.isRequired,
+    types: PropTypes.PropTypes.array.isRequired,
 }
 
 export default PizzaItem

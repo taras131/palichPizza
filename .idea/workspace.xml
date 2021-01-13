@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bb9e818-8f8e-4c33-81cc-5a7e6b03fe2b" name="Default Changelist" comment="">
+    <list default="true" id="a0ac58f6-551e-4b61-bbef-6420662cc636" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/filtersReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/pizzaReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/pizzaReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1mn5UXU452QM1kF7aRGVKIxf3Se" />
+  <component name="ProjectId" id="1n0Q4pLpbhfwm45KLi6hs41nXRa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,7 +26,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -35,15 +33,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\react\palich-pizza\src\components\home" />
-      <recent name="G:\react\palich-pizza\src\components\header" />
-      <recent name="G:\react\palich-pizza\src" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -65,18 +55,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1bb9e818-8f8e-4c33-81cc-5a7e6b03fe2b" name="Default Changelist" comment="" />
-      <created>1610116530811</created>
+      <changelist id="a0ac58f6-551e-4b61-bbef-6420662cc636" name="Default Changelist" comment="" />
+      <created>1610524344300</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1610116530811</updated>
-      <workItem from="1610116531959" duration="4945000" />
-      <workItem from="1610127821592" duration="2675000" />
-      <workItem from="1610184818712" duration="8804000" />
-      <workItem from="1610207899995" duration="1497000" />
-      <workItem from="1610266094679" duration="13859000" />
-      <workItem from="1610371029248" duration="13450000" />
-      <workItem from="1610459433017" duration="11670000" />
+      <updated>1610524344300</updated>
+      <workItem from="1610524348585" duration="6184000" />
     </task>
     <servers />
   </component>
@@ -93,6 +77,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
