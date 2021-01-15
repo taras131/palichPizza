@@ -2,7 +2,6 @@ import {useState, useEffect, useRef} from "react";
 
 const SortPopup = (props) => {
     const [menuSelectMode, setMenuSelectMode] = useState(false)
-    const [selectSort, setSelectSort] = useState(props.items[0])
     useEffect(() => {
         document.body.addEventListener(`click`, handleOutSideClick)
     }, [])
@@ -16,11 +15,13 @@ const SortPopup = (props) => {
         setMenuSelectMode(!menuSelectMode)
     }
     const onSelectSort = (select) => {
+        console.log(select)
+        props.setActiveFilter(select)
         toggleMenuSelectMode()
-        setSelectSort(select)
     }
-    const sortList = props.items.map((name, index) => <li key={`${name}_${index}`} onClick={() => onSelectSort(name)}
-                                                          className={name === selectSort ? "active" : ""}>{name}</li>)
+    console.log(props.activeFilter)
+    const sortList = props.filtersList.map((item, index) => <li key={`${item.name}_${index}`} onClick={() => onSelectSort(item.type)}
+                                                          className={item.name === props.activeFilter.name ? "active" : ""}>{item.name}</li>)
     return (
         <div ref={sortElementRef} className="sort">
             <div className="sort__label">
@@ -37,7 +38,7 @@ const SortPopup = (props) => {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={toggleMenuSelectMode}>{selectSort}</span>
+                <span onClick={toggleMenuSelectMode}>{props.activeFilter.name}</span>
             </div>
             {menuSelectMode &&
             <div className="sort__popup">

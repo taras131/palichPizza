@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0ac58f6-551e-4b61-bbef-6420662cc636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/redux/filtersReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/SortPopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/filtersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/filtersReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1610524344300</updated>
       <workItem from="1610524348585" duration="6184000" />
+      <workItem from="1610541617879" duration="82000" />
+      <workItem from="1610696427924" duration="4881000" />
     </task>
     <servers />
   </component>
@@ -77,5 +79,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -13,7 +13,7 @@ const Home = (props) => {
             <div className="content__top">
                 <Categories onClick={(name) => alert(name)}
                             items={[`Все`, `Мясные`, `Вегетарианская`, `Гриль`, `Острые`, `Закрытые`]}/>
-                <SortPopup items={[`Популярности`, `Цене`, `Алфавиту`]}/>
+                <SortPopup activeFilter = {props.activeFilter} filtersList = {props.filtersList} setActiveFilter = {props.setActiveFilter}/>
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
