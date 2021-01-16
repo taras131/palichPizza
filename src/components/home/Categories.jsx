@@ -1,14 +1,15 @@
-import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {setActiveCategories} from "../../redux/filtersReducer";
+import  React from "react";
 
 
-const Categories = (props) => {
-    const [activeItemIndex, setActiveItemIndex] = useState(0)
-    const onSelectItem = (index) => {
-        props.onClick(index)
-        setActiveItemIndex(index)
+const Categories = React.memo(function Categories (props) {
+    const dispatch = useDispatch()
+    const onSelectCategories = (index) => {
+       dispatch(setActiveCategories(index))
     }
-    const items = props.items.map((name, index) => <li onClick={() => onSelectItem(index)}
-                                                       className={index === activeItemIndex ? "active" : ""}
+    const items = props.items.map((name, index) => <li onClick={() => onSelectCategories(index)}
+                                                       className={index === props.activeCategories ? "active" : ""}
                                                        key={`${name}_${index}`}>{name}</li>)
     return (
         <div className="categories">
@@ -17,5 +18,5 @@ const Categories = (props) => {
             </ul>
         </div>
     )
-}
+})
 export default Categories

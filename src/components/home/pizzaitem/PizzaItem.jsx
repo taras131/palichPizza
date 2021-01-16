@@ -1,16 +1,18 @@
 import classNames from "classnames"
-import PropTypes, {number} from 'prop-types'
+import {useDispatch} from "react-redux";
+import {setActiveSize, setActiveType} from "../../../redux/pizzaReducer";
 
-const PizzaItem = ({name,id,imageUrl,activeType,activeSize,sizes,price, types,setActiveType,setActiveSize}) => {
-    const typesName = ["тонкое","традиционное" ]
-    const sizeName = [26,30,40 ]
+const PizzaItem = ({name, id, imageUrl, activeType, activeSize, sizes, price, types}) => {
+    const dispatch = useDispatch()
+    const typesName = ["тонкое", "традиционное"]
+    const sizeName = [26, 30, 40]
     const onSelectType = (id, index) => {
-        setActiveType(id, index)
+        dispatch(setActiveType(id, index))
     }
     const onSelectSize = (id, index) => {
-        setActiveSize(id, index)
+        dispatch(setActiveSize(id, index))
     }
-    return(
+    return (
         <div className="pizza-block">
             <img
                 className="pizza-block__image"
@@ -21,17 +23,17 @@ const PizzaItem = ({name,id,imageUrl,activeType,activeSize,sizes,price, types,se
             <div className="pizza-block__selector">
                 <ul>
                     {typesName.map((item, index) => <li
-                        className = {classNames({
+                        className={classNames({
                             active: activeType === index,
                             disable: !types.includes(index)
-                        })} key={item}  onClick={()=> onSelectType(id, index)}>{item}</li>)}
+                        })} key={item} onClick={() => onSelectType(id, index)}>{item}</li>)}
                 </ul>
                 <ul>
-                    {sizeName.map(item=> <li
-                        className = {classNames({
+                    {sizeName.map(item => <li
+                        className={classNames({
                             active: activeSize === item,
                             disable: !sizes.includes(item)
-                        })} key={item} onClick={()=> onSelectSize(id, item)}>{item} см.</li>)}
+                        })} key={item} onClick={() => onSelectSize(id, item)}>{item} см.</li>)}
                 </ul>
             </div>
             <div className="pizza-block__bottom">
@@ -55,16 +57,6 @@ const PizzaItem = ({name,id,imageUrl,activeType,activeSize,sizes,price, types,se
             </div>
         </div>
     )
-}
-PizzaItem.propsTypes = {
-    name: number.isRequired,
-    id: number.isRequired,
-    imageUrl: PropTypes.string.isRequired,
-    activeType: number.isRequired,
-    activeSize: PropTypes.number.isRequired,
-    sizes: PropTypes.PropTypes.array.isRequired,
-    price: number.isRequired,
-    types: PropTypes.PropTypes.array.isRequired,
 }
 
 export default PizzaItem

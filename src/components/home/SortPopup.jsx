@@ -1,6 +1,10 @@
 import {useState, useEffect, useRef} from "react";
+import {useDispatch} from "react-redux";
+import {setActiveFilter} from "../../redux/filtersReducer";
+import React from "react";
 
-const SortPopup = (props) => {
+const SortPopup = React.memo(function SortPopup(props) {
+    const dispatch = useDispatch()
     const [menuSelectMode, setMenuSelectMode] = useState(false)
     useEffect(() => {
         document.body.addEventListener(`click`, handleOutSideClick)
@@ -15,11 +19,9 @@ const SortPopup = (props) => {
         setMenuSelectMode(!menuSelectMode)
     }
     const onSelectSort = (select) => {
-        console.log(select)
-        props.setActiveFilter(select)
+        dispatch(setActiveFilter(select))
         toggleMenuSelectMode()
     }
-    console.log(props.activeFilter)
     const sortList = props.filtersList.map((item, index) => <li key={`${item.name}_${index}`} onClick={() => onSelectSort(item.type)}
                                                           className={item.name === props.activeFilter.name ? "active" : ""}>{item.name}</li>)
     return (
@@ -48,6 +50,6 @@ const SortPopup = (props) => {
             </div>}
         </div>
     )
-}
+})
 
 export default SortPopup
