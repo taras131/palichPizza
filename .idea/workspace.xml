@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0ac58f6-551e-4b61-bbef-6420662cc636" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/cart/CartItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/preloader/Preloader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/cartReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Categories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/HomeContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/SortPopup.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/filtersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/filtersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/pizzaReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/pizzaReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +46,17 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -52,6 +69,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.server" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -67,7 +85,10 @@
       <workItem from="1610524348585" duration="6184000" />
       <workItem from="1610541617879" duration="82000" />
       <workItem from="1610696427924" duration="4985000" />
-      <workItem from="1610786344073" duration="7121000" />
+      <workItem from="1610786344073" duration="7865000" />
+      <workItem from="1610866884861" duration="2134000" />
+      <workItem from="1611065633065" duration="1024000" />
+      <workItem from="1611131924954" duration="12367000" />
     </task>
     <servers />
   </component>

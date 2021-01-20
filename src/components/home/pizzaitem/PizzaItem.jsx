@@ -1,6 +1,7 @@
 import classNames from "classnames"
 import {useDispatch} from "react-redux";
 import {setActiveSize, setActiveType} from "../../../redux/pizzaReducer";
+import {addPizzaToCart} from "../../../redux/cartReducer";
 
 const PizzaItem = ({name, id, imageUrl, activeType, activeSize, sizes, price, types}) => {
     const dispatch = useDispatch()
@@ -11,6 +12,9 @@ const PizzaItem = ({name, id, imageUrl, activeType, activeSize, sizes, price, ty
     }
     const onSelectSize = (id, index) => {
         dispatch(setActiveSize(id, index))
+    }
+    const onClickAddPizza = () => {
+        dispatch(addPizzaToCart({name, id, imageUrl, activeType, activeSize, sizes, price, types}))
     }
     return (
         <div className="pizza-block">
@@ -36,7 +40,7 @@ const PizzaItem = ({name, id, imageUrl, activeType, activeSize, sizes, price, ty
                         })} key={item} onClick={() => onSelectSize(id, item)}>{item} см.</li>)}
                 </ul>
             </div>
-            <div className="pizza-block__bottom">
+            <div className="pizza-block__bottom" onClick={onClickAddPizza}>
                 <div className="pizza-block__price">{price}</div>
                 <div className="button button--outline button--add">
                     <svg

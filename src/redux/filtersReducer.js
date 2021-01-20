@@ -5,7 +5,7 @@ const initialState = {
     filtersList: [
         {name: `популярности`, type: `popular`},
         {name: `цене`, type: `price`},
-        {name: `алфавиту`, type: `alphabet`}
+        {name: `алфавиту`, type: `name`}
     ],
     activeFilter: {name: `популярности`, type: `popular`},
     activeCategories: 0
@@ -22,9 +22,11 @@ const filtersReducer = (state = initialState, action) => {
     }
 }
 export const setActiveFilter = (select) => {
+    console.log(select)
     return {type: SET_ACTIVE_FILTER, select}
 }
 export const setActiveCategories = (index) => {
+    console.log(index)
     return {type: SET_ACTIVE_CATEGORIES, index}
 }
 

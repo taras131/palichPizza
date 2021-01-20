@@ -49,8 +49,9 @@ export const setActiveSize = (id, index) => {
     return {type: SET_ACTIVESIZE, id, index}
 }
 
-export const getPizzasData = () => async (dispatch) => {
-    let response = await APIPizza.getPPizza()
+export const getPizzasData = (activeFilter,activeCategories) => async (dispatch) => {
+    dispatch(setIsLoading(false))
+    let response = await APIPizza.getPPizza(activeFilter,activeCategories)
     dispatch(setPizzasList(response))
     dispatch(setIsLoading(true))
 }

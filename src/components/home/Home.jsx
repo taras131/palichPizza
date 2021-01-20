@@ -1,10 +1,14 @@
 import {Categories, SortPopup} from "./index";
 import PizzaItem from "./pizzaitem/PizzaItem";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {getPizzasData} from "../../redux/pizzaReducer";
+import {useEffect} from "react";
+import Preloader from "../preloader/Preloader";
 
 const  itemsCategory =[`Все`, `Мясные`, `Вегетарианская`, `Гриль`, `Острые`, `Закрытые`]
 
 const Home = () => {
+    const dispatch = useDispatch()
     const {pizzasList, isLoading, filtersList, activeFilter, activeCategories} = useSelector(state => {
         return ({
             pizzasList: state.pizzaInfo.pizzasList,
@@ -14,9 +18,9 @@ const Home = () => {
             activeCategories: state.filtersInfo.activeCategories
         })
     })
-    if (!isLoading) {
-        return <div>Загрузка</div>
-    }
+    useEffect(() => {
+            dispatch(getPizzasData(activeFilter,activeCategories))
+    },[activeFilter,activeCategories])
     const pizzasItemList = pizzasList.map(item => <PizzaItem key={`${item.id}_${item.name}`} {...item}/>)
     return (
         <div className="container">
@@ -27,7 +31,9 @@ const Home = () => {
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
-                {pizzasItemList}
+                {isLoading
+                ? pizzasItemList
+                : Array(10).fill(0).map((item,index)=> <Preloader key = {index}/>)}
             </div>
         </div>
     )
