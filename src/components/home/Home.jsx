@@ -18,10 +18,13 @@ const Home = () => {
             activeCategories: state.filtersInfo.activeCategories
         })
     })
+    const cartList = useSelector((state)=> state.cartInfo.cartList)
+    console.log(cartList)
     useEffect(() => {
             dispatch(getPizzasData(activeFilter,activeCategories))
     },[activeFilter,activeCategories])
-    const pizzasItemList = pizzasList.map(item => <PizzaItem key={`${item.id}_${item.name}`} {...item}/>)
+    const pizzasItemList = pizzasList.map(item => <PizzaItem
+        key={`${item.id}_${item.name}`} {...item} cauntInCart={cartList[item.id] && cartList[item.id].length}/>)
     return (
         <div className="container">
             <div className="content__top">

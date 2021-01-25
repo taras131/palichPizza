@@ -1,16 +1,26 @@
-const CartItem = (props) => {
+import {useDispatch} from "react-redux";
+import {deletePizza, plusPizzaCount} from "../../redux/cartReducer";
+
+const CartItem = ({item , index}) => {
+    const dispatch = useDispatch()
+    const onDeleteClick = () => {
+        dispatch(deletePizza(index))
+    }
+    const onPlusPizzaClick = () =>{
+        dispatch(plusPizzaCount(index))
+    }
     return(
         <div className="cart__item">
             <div className="cart__item-img">
                 <img
                     className="pizza-block__image"
-                    src={props.imageUrl}
+                    src={item.imageUrl}
                     alt="Pizza"
                 />
             </div>
             <div className="cart__item-info">
-                <h3>{props.name}</h3>
-                <p>тонкое тесто, 26 см.</p>
+                <h3>{item.name}</h3>
+                <p>{item.activeType ? "традиционное" : "тонкое"}, {item.activeSize} см.</p>
             </div>
             <div className="cart__item-count">
                 <div className="button button--outline button--circle cart__item-count-minus">
@@ -24,8 +34,8 @@ const CartItem = (props) => {
                     </svg>
 
                 </div>
-                <b>2</b>
-                <div className="button button--outline button--circle cart__item-count-plus">
+                <b>{item.count}</b>
+                <div className="button button--outline button--circle cart__item-count-plus" onClick={onPlusPizzaClick}>
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M5.92001 3.84V5.76V8.64C5.92001 9.17016 5.49017 9.6 4.96001 9.6C4.42985 9.6 4.00001 9.17016 4.00001 8.64L4 5.76L4.00001 3.84V0.96C4.00001 0.42984 4.42985 0 4.96001 0C5.49017 0 5.92001 0.42984 5.92001 0.96V3.84Z"
@@ -38,9 +48,9 @@ const CartItem = (props) => {
                 </div>
             </div>
             <div className="cart__item-price">
-                <b>{props.price} ₽</b>
+                <b>{item.price} ₽</b>
             </div>
-            <div className="cart__item-remove">
+            <div className="cart__item-remove" onClick={onDeleteClick}>
                 <div className="button button--outline button--circle">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

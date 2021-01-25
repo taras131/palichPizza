@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0ac58f6-551e-4b61-bbef-6420662cc636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/cart/CartItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/preloader/Preloader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/cartReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cart/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/Cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/pizzaitem/PizzaItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/filtersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/filtersReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/pizzaReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/pizzaReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/cartReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +63,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.server" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.server" />
       </list>
     </recent_temporary>
   </component>
@@ -88,7 +82,8 @@
       <workItem from="1610786344073" duration="7865000" />
       <workItem from="1610866884861" duration="2134000" />
       <workItem from="1611065633065" duration="1024000" />
-      <workItem from="1611131924954" duration="12367000" />
+      <workItem from="1611131924954" duration="26080000" />
+      <workItem from="1611559140526" duration="4817000" />
     </task>
     <servers />
   </component>
