@@ -2,62 +2,100 @@ const ADD_PIZZA_TO_CART = "ADD_PIZZA_TO_CART",
     DELETE_PIZZA = "DELETE_PIZZA",
     DELETE_ALL_PIZZA = "DELETE_ALL_PIZZA",
     PLUS_PIZZA_COUNT = "PLUS_PIZZA_COUNT",
-    SET_TOTAL_PRICE = "SET_TOTAL_PRICE",
-    SET_TOTAL_COUNT = "SET_TOTAL_COUNT"
+    MINUS_PIZZA_COUNT = "MINUS_PIZZA_COUNT"
 const initialState = {
-    cartList: {},
+    cartList: new Map(),
     totalPrice: 0,
     totalCount: 0
 }
+const countNumberPizzas = (temporallyCartList) => {
+    let count = 0
+    temporallyCartList.forEach(value => {
+        count += value.count
+    })
+    return count
+}
+const sumPricePizzas = (temporallyCartList) => {
+    let sum = 0
+    temporallyCartList.forEach(value => {
+        sum += value.count * value.price
+    })
+    return sum
+}
 const cartReducer = (state = initialState, action) => {
+    let temporallyCartList = new Map(state.cartList)
+    let cartId
     switch (action.type) {
-        case SET_TOTAL_PRICE:
-            return {...state}
-        case SET_TOTAL_COUNT:
-            return {...state}
-        case ADD_PIZZA_TO_CART: {
-            const newPizzaList = {
-                    ...state.cartList,
-                    [action.item.id]: !state.cartList[action.item.id]
-                        ? [action.item]
-                        : [...state.cartList[action.item.id], action.item]
+        case ADD_PIZZA_TO_CART:
+            cartId = `${action.item.id}${action.item.activeSize}${action.item.activeType}`
+            if (temporallyCartList.has(cartId)) {
+                temporallyCartList.set(cartId, {...action.item, count: temporallyCartList.get(cartId).count + 1})
+                return {
+                    ...state,
+                    cartList: temporallyCartList,
+                    totalCount: countNumberPizzas(temporallyCartList),
+                    totalPrice: sumPricePizzas(temporallyCartList)
                 }
-                const arrAllPizzas = [].concat.apply([],Object.values(newPizzaList))
-            const totalPrice = arrAllPizzas.reduce((sum, obj)=> obj.price +sum , 0)
+            } else {
+                temporallyCartList.set(cartId, {...action.item, count: 1})
+                return {
+                    ...state,
+                    cartList: temporallyCartList,
+                    totalCount: countNumberPizzas(temporallyCartList),
+                    totalPrice: sumPricePizzas(temporallyCartList)
+                }
+            }
+        case DELETE_PIZZA:
+            temporallyCartList.delete(`${action.id}${action.activeSize}${action.activeType}`)
             return {
                 ...state,
-                cartList: newPizzaList,
-                totalCount: arrAllPizzas.length,
-                totalPrice
+                cartList: temporallyCartList,
+                totalCount: countNumberPizzas(temporallyCartList),
+                totalPrice: sumPricePizzas(temporallyCartList)
             }
-        }
-        case DELETE_PIZZA:
-            return {...state, cartList: [...state.cartList.filter((item, index) => index !== action.index)]}
         case DELETE_ALL_PIZZA:
-            return {...state, cartList: []}
+            temporallyCartList.clear()
+            return {
+                ...state,
+                cartList: temporallyCartList,
+                totalCount: countNumberPizzas(temporallyCartList),
+                totalPrice: sumPricePizzas(temporallyCartList)
+            }
         case PLUS_PIZZA_COUNT:
-            return {...state}
+            cartId = `${action.item.id}${action.item.activeSize}${action.item.activeType}`
+            temporallyCartList.set(cartId, {...action.item, count: temporallyCartList.get(cartId).count + 1})
+            return {
+                ...state,
+                cartList: temporallyCartList,
+                totalCount: countNumberPizzas(temporallyCartList),
+                totalPrice: sumPricePizzas(temporallyCartList)
+            }
+        case MINUS_PIZZA_COUNT:
+            cartId = `${action.item.id}${action.item.activeSize}${action.item.activeType}`
+            temporallyCartList.set(cartId, {...action.item, count: temporallyCartList.get(cartId).count - 1})
+            return {
+                ...state,
+                cartList: temporallyCartList,
+                totalCount: countNumberPizzas(temporallyCartList),
+                totalPrice: sumPricePizzas(temporallyCartList)
+            }
         default:
             return state
     }
 }
-export const setTotalPrice = () => {
-    return {type: SET_TOTAL_PRICE}
-}
-export const setTotalCount = () => {
-    return {type: SET_TOTAL_COUNT}
-}
 export const addPizzaToCart = (item) => {
-    console.log(item)
     return {type: ADD_PIZZA_TO_CART, item}
 }
-export const deletePizza = (index) => {
-    return {type: DELETE_PIZZA, index}
+export const deletePizza = (id, activeSize, activeType) => {
+    return {type: DELETE_PIZZA, id, activeSize, activeType}
 }
 export const deleteAllPizza = () => {
     return {type: DELETE_ALL_PIZZA}
 }
-export const plusPizzaCount = (index) => {
-    return {type: PLUS_PIZZA_COUNT}
+export const plusPizzaCount = (item) => {
+    return {type: PLUS_PIZZA_COUNT, item}
+}
+export const minusPizzaCount = (item) => {
+    return {type: MINUS_PIZZA_COUNT, item}
 }
 export default cartReducer

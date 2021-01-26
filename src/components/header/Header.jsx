@@ -7,7 +7,7 @@ const Header = () => {
     const {totalPrice, totalCount} = useSelector(state => {
             return ({
                 totalPrice: state.cartInfo.totalPrice,
-                totalCount: state.cartInfo.totalCount
+                totalCount: state.cartInfo.totalCount,
             })
         }
     )

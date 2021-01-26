@@ -3,7 +3,13 @@ import {useDispatch} from "react-redux";
 import {setActiveSize, setActiveType} from "../../../redux/pizzaReducer";
 import {addPizzaToCart} from "../../../redux/cartReducer";
 
-const PizzaItem = ({name, id, imageUrl, activeType, activeSize, sizes, price, types, cauntInCart}) => {
+const PizzaItem = ({name, id, imageUrl, activeType, activeSize, sizes, price, types, cartList}) => {
+    let countInCart = 0
+    cartList.forEach(value => {
+        if (value.id === id) {
+            countInCart += value.count
+        }
+    })
     const dispatch = useDispatch()
     const typesName = ["тонкое", "традиционное"]
     const sizeName = [26, 30, 40]
@@ -59,7 +65,7 @@ const PizzaItem = ({name, id, imageUrl, activeType, activeSize, sizes, price, ty
                         />
                     </svg>
                     <span>Добавить</span>
-                    {cauntInCart && <i>{cauntInCart}</i>}
+                    {countInCart >0 ? <i>{countInCart}</i> : ""}
                 </div>
             </div>
         </div>
